@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "ViewDashBoard";
+    Layout = "_layoutmaster";
+}
+
+<h1>Dashboard</h1>
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Category');
+            data.addColumn('number', 'Items');
+            data.addRows([
+                ['Vegetables', @ViewData["d1"]],
+                ['Fruits', @ViewData["d2"]],
+                ['Bakery', @ViewData["d3"]],
+                ['Other Products', @ViewData["d4"]],
+                ['Chocolate', @ViewData["d5"]]
+            ]);
+            var options = {
+                'title': 'Number of Items',
+                'width': 400,
+                'height': 300
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div id="chart_div"></div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class='card'>
+                <div class='card-header bg-info text-center'>
+                    Vegetables
+                </div>
+                <div class='card-body'>
+                    <img src='~/images/vegetables.jpg' width='50px'>
+                </div>
+                <div class='card-footer'>
+                    Number of Items: <div> @ViewData["d1"] </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class='card'>
+                <div class='card-header bg-info text-center'>Fruits</div>
+                <div class='card-body'>
+                    <img src='~/images/vegetables.jpg' width='50px'>
+                </div>
+                <div class='card-footer'>
+                    Number of Items: <div>@ViewData["d2"] </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class='card'>
+                <div class='card-header bg-info text-center'>Bakery</div>
+                <div class='card-body'>
+                    <img src='~/images/bakery.jpg' width='50px'>
+                </div>
+                <div class='card-footer'>
+                    Number of Items: <div>@ViewData["d3"] </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class='card'>
+                <div class='card-header bg-info text-center'>Other Products</div>
+                <div class='card-body'>
+                    <img src='~/images/other-products.jpg' width='50px'>
+                </div>
+                <div class='card-footer'>
+                    Number of Items: <div>@ViewData["d4"] </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class='card'>
+                <div class='card-header bg-info text-center'>Chocolate</div>
+                <div class='card-body'>
+                    <img src='~/images/chocolate.jpg' width='50px'>
+                </div>
+                <div class='card-footer'>
+                    Number of Items: <div>@ViewData["d5"] </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

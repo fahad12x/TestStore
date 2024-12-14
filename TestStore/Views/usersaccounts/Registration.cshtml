@@ -1,0 +1,158 @@
+﻿@model TestStore.Models.customer
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #007BFF, #0056b3); /* تدرج أزرق */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start; /* محاذاة النموذج لليسار */
+            align-items: flex-start; /* محاذاة رأسية لليسار */
+            height: 100vh;
+            color: #fff;
+            padding-left: 20px; /* مسافة من اليسار */
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1); /* خلفية شفافة */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px; /* تقليص الحواف */
+            width: 100%;
+            max-width: 500px; /* زيادة عرض النموذج */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+            .form-container h2 {
+                font-size: 22px; /* تقليص حجم العنوان */
+                margin-bottom: 15px;
+                color: #ffffff;
+                font-weight: 600;
+            }
+
+        .form-group {
+            margin-bottom: 10px; /* تقليص المسافات بين المكونات */
+            text-align: left;
+        }
+
+            .form-group label {
+                font-weight: bold;
+                margin-bottom: 5px; /* تقليص المسافة بين النص والحقل */
+                display: block;
+                color: #ffffff; /* لون أبيض للنصوص */
+            }
+
+        .form-control {
+            width: 100%;
+            padding: 10px; /* تقليص الحشو */
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.9); /* خلفية فاتحة للحقول */
+            color: #333; /* لون النص داخل الحقول */
+        }
+
+            .form-control:focus {
+                outline: none;
+                border: 2px solid #4caf50; /* لون أخضر عند التركيز */
+            }
+
+        .btn-primary {
+            background: linear-gradient(to right, #007BFF, #0056b3); /* تدرج لوني أزرق */
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease-in-out;
+        }
+
+            .btn-primary:hover {
+                background: linear-gradient(to right, #0056b3, #007BFF); /* عكس التدرج عند التمرير */
+            }
+
+        .alert {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .alert-danger {
+            color: #ff4d4d; /* الأحمر للإشعارات */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register Customer</h2>
+        <form asp-action="Registration" method="post">
+            <div class="form-group">
+                <label for="UserName">Name</label>
+                <input type="text" id="UserName" name="Name" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" id="Email" name="Email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" id="Password" name="Password" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="ConfirmPassword">Confirm Password</label>
+                <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Job">Job</label>
+                <input type="text" id="Job" name="Job" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Married">Married</label>
+                <select id="Married" name="Married" class="form-control" required>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Gender">Gender</label>
+                <select id="Gender" name="Gender" class="form-control" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Location">Location</label>
+                <input type="text" id="Location" name="Location" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn-primary">Register</button>
+        </form>
+
+        <div class="alert alert-danger" role="alert">
+            <p>@ViewData["Message"]</p>
+        </div>
+    </div>
+</body>
+</html>

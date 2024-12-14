@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "PageHomefromAdmin";
+   Layout = "_Layoutmaster";
+}
+
+
+<style>
+    body {
+        background-image: url('/images/b1.png');
+        color: black;
+    }
+
+    .form-container {
+        background-color: rgba(52, 84, 87, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #E4BC7F;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #7CC47C;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F0F0F0;
+    }
+
+    label {
+        margin-bottom: 5px;
+        display: block;
+        text-align: left;
+        color: #562C09;
+    }
+
+    .right-column {
+        background-size: cover;
+        background-position: center;
+        height: 150vh;
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        background-color: rgba(255, 190, 0, 0.3);
+        border: 1px solid #70D460;
+        color: white;
+        margin-bottom: 10px;
+        padding: 12px;
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+    }
+
+        input[type="submit"] {
+            background-color: rgba(255, 190, 0, 0.3);
+            color: white;
+            opacity: 0.9;
+            padding: 15px 20px;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+        }
+
+    .form-title {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 24px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .logo-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .logo-container img {
+            max-width: 100%;
+        }
+
+    .form-container a {
+        color: #05473D;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .form-container .btn {
+        background-color: transparent; /* Specify the background color */
+        font-size: 16px;
+        border: 1px solid #E4BC7F;
+        padding: 10px;
+        cursor: pointer;
+    }
+</style>
+
+<h1>Home Page Admin</h1>
+
+<h1>Welcome, Noura SuberMarket @ViewData["Username"]!</h1>
+
